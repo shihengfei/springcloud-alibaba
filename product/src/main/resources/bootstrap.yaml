@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: product
+  # 配置文件环境
+  profiles:
+    active: test
+  cloud:
+    nacos:
+      # nacos 服务地址
+      server-addr: 47.119.172.79:8848
+      discovery:
+        # 注册地址
+        server-addr: ${spring.cloud.nacos.server-addr}
+        # 命名空间
+        namespace: d57dcf1c-2210-4b0c-95ea-3b38a429b624
+      # nacos 配置信息
+      config:
+        namespace: d57dcf1c-2210-4b0c-95ea-3b38a429b624
+        group: TEST
+        file-extension: yaml
